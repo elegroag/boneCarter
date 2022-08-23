@@ -1,0 +1,68 @@
+{
+  "name": "com.elegro.bonecarter",
+  "displayName": "BoneCarter",
+  "version": "1.0.1",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 14.17.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt && cordova run browser --port=3001",
+    "build": "grunt && cordova build android -- --gradleArg=-PcdvCompileSdkVersion=32",
+    "deploy": "grunt && cordova run android -- --gradleArg=-PcdvCompileSdkVersion=32",
+    "emulate": "cordova emulate android",
+    "adv": "cordova run --emulator"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": {
+    "name": "edwin andres legro agudelo",
+    "email": "maxedwwin@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "cordova-android": "^11.0.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-network-information": "^3.0.0",
+    "cordova-sqlite-ext": "^6.0.0",
+    "css-loader": "^6.7.1",
+    "grunt": "^1.5.3",
+    "grunt-babel": "^8.0.0",
+    "grunt-concat-css": "^0.3.2",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^3.2.0",
+    "grunt-contrib-nodeunit": "^4.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-develop": "^0.4.0",
+    "load-grunt-tasks": "^5.1.0",
+    "request": "^2.88.2",
+    "time-grunt": "^2.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-device": {},
+      "cordova-sqlite-ext": {}
+    }
+  },
+  "dependencies": {
+    "jquery": "^1.11.1",
+    "underscore": "^1.13.4",
+    "jquery-mobile": "^1.4.1",
+    "backbone": "^1.4.1"
+  }
+}

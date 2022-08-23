@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Hello World!</title>
+		<meta charset="utf-8">
+		<meta http-equiv=" X-UA-Compatible" content=" IE=edge">
+		<meta http-equiv="Content-Security-Policy" 
+		content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="color-scheme" content="light dark">
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+		<meta http-equiv="X-Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" /> 
+		<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+		<link rel="stylesheet" href="static/css/build.styles.css" />
+	</head>
+	<body  data-theme="c">
+		<div class='app' data-role='page' data-theme="c" id="pageIndex">
+            <div role="main" class="ui-content" id='deviceready'>
+				<h1>💖 Hello World!</h1>
+				<p>Welcome to your Electron application.</p>
+
+                <p>Indica la acción  a realizar para configurar su aplicación.</p>
+                <a href="#login" data-role="button" data-theme="d" data-transition="slide">Login</a>
+				<br/>
+                <a href="#registro" data-role="button" data-theme="d" data-transition="slide">Registro</a>
+            </div>
+        </div>
+
+		<div class='app' data-role='page' data-theme="c" id="pageLogin">
+            <div role="main" class="ui-content">
+				<h1>💖 Login page</h1>
+				<p>Indica la acción  a realizar para configurar su aplicación.</p>
+				<a href="#" data-theme="d" data-transition="slide">Volver</a>
+            </div>
+        </div>
+
+		<div class='app' data-role='page' data-theme="c" id="pageRegistro">
+            <div role="main" class="ui-content">
+				<h1>💖 Registro page</h1>
+				<p>Indica la acción  a realizar para configurar su aplicación.</p>
+				<a href="#" data-theme="d" data-transition="slide">Volver</a>
+            </div>
+        </div>
+		<script type="text/javascript" src="static/js/build.resources.js"></script>
+		<script type="text/javascript" src="static/js/dash.index.js" data-main="js/mobile"></script>
+	</body>
+</html>
