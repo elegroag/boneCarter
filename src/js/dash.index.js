@@ -85,7 +85,7 @@ const DashIndex = () => {
 	}
 
 	let initialize = () => {
-		//document.addEventListener("deviceready", onDeviceReady, false)
+		//document.addEventListener('deviceready', onDeviceReady, false);
 		window.addEventListener('deviceready', onDeviceReady, false)
 	}
 
