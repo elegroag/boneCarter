@@ -18,7 +18,7 @@
 	<body  data-theme="c">
 		<div class='app' data-role='page' data-theme="c" id="pageIndex">
             <div role="main" class="ui-content" id='deviceready'>
-				<h1>💖 Hello World!</h1>
+				<h1>💖 BoneCarter Project</h1>
 				<p>Welcome to your Electron application.</p>
 
                 <p>Indica la acción  a realizar para configurar su aplicación.</p>
@@ -29,10 +29,40 @@
         </div>
 
 		<div class='app' data-role='page' data-theme="c" id="pageLogin">
+			<div data-role="header" role='banner'>
+                <span class="ui-title">Login</span>
+                <a href="#" class="ui-btn ui-btn-c ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-left  ui-shadow ui-icon-grid"></a>
+                <button type="button" data-toogle="irlogin" class="ui-btn ui-btn-c ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-right ui-shadow ui-icon-carat-r"></button>
+            </div>
             <div role="main" class="ui-content">
-				<h1>💖 Login page</h1>
-				<p>Indica la acción  a realizar para configurar su aplicación.</p>
-				<a href="#" data-theme="d" data-transition="slide">Volver</a>
+				<form method="post" action="#" id="formLogin">
+                    <div class="ui-corner-all custom-corners">
+                        <div class="ui-bar ui-bar-a">
+							<p >Ingresa los datos requeridos para hacer el respectivo login de sesión al aplicativo.</p>
+						</div>
+                        <div class="ui-body ui-body-a">
+                            
+                            <div class="ui-field-contain">
+                                <label for="tipo_documento">Tipo Identificación</label>
+                                <input class="ui-input-text ui-body-inherit ui-shadow-inset ui-input-has-clear" type="text" name="type_document" id="type_document" value="">
+                            </div>
+							<div class="ui-field-contain">
+                                <label for="identification">Identificación</label>
+                                <input class="ui-input-text ui-body-inherit ui-shadow-inset ui-input-has-clear" type="text" name="identification" id="identification" value="">
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="clave">Clave</label>
+                                <input class="ui-input-text ui-body-inherit ui-shadow-inset ui-input-has-clear" type="password" name="clave" id="clave" value="">
+                            </div>
+							<div class="ui-field-contain">
+                                <button data-role="button" data-theme="a" id="btnEnviar" >Envíar</button>
+                            </div>
+						</div>
+					</div>
+				</form>			
+            </div>
+			<div data-role="footer" data-position="fixed">
+				...
             </div>
         </div>
 
@@ -43,6 +73,16 @@
 				<a href="#" data-theme="d" data-transition="slide">Volver</a>
             </div>
         </div>
+
+		<div class='app' data-role='page' data-theme="c" id="pageStart">
+            <div role="main" class="ui-content">
+				<h1>💖 Start page</h1>
+				<p id="textStartApe"></p>
+				<a href="#" data-theme="d" data-transition="slide">Volver</a>
+            </div>
+        </div>
+		
+		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="static/js/build.resources.js"></script>
 		<script type="text/javascript" src="static/js/dash.index.js" data-main="js/mobile"></script>
 	</body>

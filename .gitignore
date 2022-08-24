@@ -31,3 +31,4 @@ src/cp/
 plugins/
 package-lock.json
 .vscode/
+android/
