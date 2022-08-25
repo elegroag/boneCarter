@@ -91,9 +91,9 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask("default", [
-		"concat",
+		//"concat",
 		"babel", 
-		"concat_css",
+		//"concat_css",
 		"uglify"
 	]);
 };

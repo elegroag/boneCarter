@@ -133,12 +133,12 @@ const DashInicio = () => {
 	}
 }
 
-document.addEventListener("deviceready", (event) => {
-	let dashIndex = DashInicio()
-	dashIndex.initialize()
-}, false)
-
-// window.addEventListener("load", (event) => {
+// document.addEventListener("deviceready", (event) => {
 // 	let dashIndex = DashInicio()
 // 	dashIndex.initialize()
 // }, false)
+
+window.addEventListener("load", (event) => {
+	let dashIndex = DashInicio()
+	dashIndex.initialize()
+}, false)

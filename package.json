@@ -10,6 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "grunt && cordova run browser --port=3001",
+    "local": "grunt && cordova build browser",
     "build": "grunt && cordova build android -- --gradleArg=-PcdvCompileSdkVersion=32",
     "deploy": "grunt && cordova run android -- --gradleArg=-PcdvCompileSdkVersion=32",
     "emulate": "cordova emulate android",

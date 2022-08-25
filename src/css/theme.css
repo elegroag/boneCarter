@@ -61,7 +61,7 @@ Tema personalizado
 
 @font-face {
 	font-family: 'Poppins-Medium';
-	src: url("../fonts/Poppins-Medium.woff") format("woff");
+	src: url("../static/fonts/Poppins-Medium.woff") format("woff");
 }
 
 @font-face {
