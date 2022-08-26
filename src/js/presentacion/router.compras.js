@@ -1,0 +1,1 @@
+// se definen las rutas para mostrar los productos
