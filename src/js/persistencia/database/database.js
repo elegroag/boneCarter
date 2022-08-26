@@ -23,7 +23,7 @@
         }, (tx, error) => {
             console.log('Error la tabla no se pudo crear! '+ error.message)
         })
-   }
+    }
 
     let insertarData =  (tx) => {
         tx.executeSql(_persona_insert, [1, 'alan felipe legro paes', 1110491951], (tx, result) => {
