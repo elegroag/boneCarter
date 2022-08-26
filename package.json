@@ -3,20 +3,21 @@
   "displayName": "BoneCarter",
   "version": "1.0.1",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "main": "index.js",
+  "main": "www/index.html",
   "engines": {
     "node": ">= 14.17.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "grunt && cordova run browser --port=3001",
+    "local": "grunt && cordova build browser",
     "build": "grunt && cordova build android -- --gradleArg=-PcdvCompileSdkVersion=32",
     "deploy": "grunt && cordova run android -- --gradleArg=-PcdvCompileSdkVersion=32",
     "emulate": "cordova emulate android",
     "adv": "cordova run --emulator"
   },
   "keywords": [
-    "ecosystem:cordova"
+    "ecosystem:capacitor"
   ],
   "author": {
     "name": "edwin andres legro agudelo",
@@ -27,6 +28,11 @@
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
+    "@capacitor/android": "^4.1.0",
+    "@capacitor/cli": "^4.1.0",
+    "@capacitor/core": "^4.1.0",
+    "@capacitor/device": "^4.0.1",
+    "@capacitor/network": "^4.0.1",
     "babel-loader": "^8.2.5",
     "cordova-android": "^11.0.0",
     "cordova-browser": "^6.0.0",

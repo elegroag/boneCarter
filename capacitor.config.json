@@ -1,0 +1,17 @@
+{
+	"appId": "com.elegro.bonecarter",
+	"appName": "BoneCarter",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"windowsAndroidStudioPath": "C:\\opt\\Android\\bin\\studio64.exe",
+	"hideLogs": true,
+	"backgroundColor": "#444444",
+	"android": {
+		"overrideUserAgent": "com.elegro",
+		"appendUserAgent": "Proyecto BoneCarter En Android",
+		"backgroundColor": "#444444",
+		"allowMixedContent": true,
+		"captureInput": true,
+		"webContentsDebuggingEnabled": true
+	}
+}
