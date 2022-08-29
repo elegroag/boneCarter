@@ -1,17 +1,5 @@
 
-
 const DashInicio = () => {
-
-	let preparaToken = (formulario) => {
-		let _data_array = $(formulario).serializeArray()
-		let _token = {}
-		let $i = 0
-		while ($i < _.size(_data_array)) {
-			_token[_data_array[$i].name] = _data_array[$i].value;
-			$i++;
-		}
-		return _token;
-	}
 
 	let eventLogin = () => {
 
@@ -24,7 +12,7 @@ const DashInicio = () => {
 
 		loginTarget.on('click', '#btnEnviar', (event) => {
 			event.preventDefault()
-			let _token = preparaToken("#formLogin")
+			let _token = window.core.preparaToken("#formLogin")
 			buscarUsuario(_token)
 			console.log(JSON.stringify(_token))
 		})
@@ -57,11 +45,6 @@ const DashInicio = () => {
 		"receivedEvent": receivedEvent
 	}
 }
-
-// document.addEventListener("deviceready", (event) => {
-// 	let dashIndex = DashInicio()
-// 	dashIndex.initialize()
-// }, false)
 
 window.addEventListener("load", (event) => {
 	let dashIndex = DashInicio()

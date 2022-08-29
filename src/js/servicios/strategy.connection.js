@@ -36,19 +36,16 @@ const ProcesarOffline = ((win, db) => {
 })(window, instancia);
 
 //metodo de contexto
-var RealizarPago = {
-    pagoEfectivo: () => {
-        let procesarPagos = ProcesarPagosEfectivo;
+const AmbenteProcesar = {
+    procesarOnline: () => {
+        let procesarPagos = ProcesarOnline;
         procesarPagos.init();
         procesarPagos.procesar();
     },
-    pagoCredito: () => {
-        let procesarPagos = ProcesarPagosCredito;
+    procesarOffline: () => {
+        let procesarPagos = ProcesarOffline;
         procesarPagos.init();
         procesarPagos.procesar();
     }
 }
-
 //metodo receptor de cliente
-RealizarPago.pagoEfectivo()
-RealizarPago.pagoCredito()

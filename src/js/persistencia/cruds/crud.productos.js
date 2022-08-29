@@ -1,6 +1,7 @@
-const Personas = ((win, db) => {
 
-    let table = 'persona'; 
+Cruds.Productos = ((win, db, Producto) => {
+
+    let table = 'productos'; 
     let collection = [];
     let row = {};
 
@@ -136,4 +137,4 @@ const Personas = ((win, db) => {
         "mostrar": mostrar,
         "consulta": consulta
     }
-})(window, InstanciaDb);
+})(window, InstanciaDb, Modulos.Producto);
