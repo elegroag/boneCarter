@@ -15,7 +15,23 @@ module.exports = function (grunt) {
 					"node_modules/underscore/underscore-umd.js",
                     "node_modules/backbone/backbone.js"
 				],
-				dest: "src/cp/build.resources.js"
+				dest: "www/static/js/build.resources.js"
+			},
+			test: {
+				src: [
+					"src/js/servicios/network.connection.js",
+					"src/js/persistencia/database/db.connection.js",
+					"src/js/persistencia/helpers.js",
+					"src/js/persistencia/database/db.inicializacion.js",
+					"src/js/core.js",
+					"src/js/persistencia/modulos/modulo.personas.js",
+					"src/js/persistencia/cruds/crud.personas.js",
+					"src/js/persistencia/cruds/crud.productos.js",
+					"src/js/servicios/strategy.enviroment.js",
+					"src/js/presentacion/router.test.js",
+					"src/js/presentacion/test.index.js"
+				],
+				dest: "src/cp/build.test.js"
 			}
 		},
 		babel: {
@@ -25,12 +41,12 @@ module.exports = function (grunt) {
 			dist: {
 			  	files: [{
 					expand: true,
-					cwd: "src/js/",
+					cwd: "src/cp/",
 					src: ['**/*.js'],
 					dest: 'www/static/js'
 				}]
 			}
-		},
+		}, 	
 		concat_css: {
 			options: {
 			},
@@ -91,9 +107,9 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask("default", [
-		//"concat",
+		"concat",
 		"babel", 
 		//"concat_css",
-		"uglify"
+		//"uglify"
 	]);
 };

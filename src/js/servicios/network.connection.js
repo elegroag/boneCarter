@@ -3,9 +3,9 @@
 class NetworkConnection {
 
     static instancia;
-    net = 'Offline';
-    state;
-    networkState;
+    _net = 'Offline';
+    _state;
+    _networkState;
 
     constructor(){
         //si no es false !!
@@ -18,7 +18,8 @@ class NetworkConnection {
     }
 
     init(){
-        networkState = navigator.connection.type;
+        this._networkState = navigator.connection.type;
+        let states = new Array;
 		states[Connection.UNKNOWN]  = 'Unknown connection';
 		states[Connection.ETHERNET] = 'Ethernet connection';
 		states[Connection.WIFI]     = 'WiFi connection';
@@ -27,28 +28,28 @@ class NetworkConnection {
 		states[Connection.CELL_4G]  = 'Cell 4G connection';
 		states[Connection.CELL]     = 'Cell generic connection';
 		states[Connection.NONE]     = 'No network connection';
-		this.state = states[networkState] || false
+		this._state = states[this._networkState] || false
     }
 
     change(net, networkState, state){
-        this.net = net;
-        this.state = state;
-        this.networkState = networkState;
+        this._net = net;
+        this._state = state;
+        this._networkState = networkState;
     }
 
     get state(){
-        return this.state;
+        return this._state;
     }
 
     get networkState(){
-        return $this.networkState;
+        return this._networkState;
     }
 
     get net(){
-        return this.net;
+        return this._net;
     }
 
     set net(status){
-        this.net = status;
+        this._net = status;
     }
 }

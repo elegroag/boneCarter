@@ -1,10 +1,10 @@
-Modulos.Compras = ((Bone, _, $, win) => {
+Modulos.Compra = ((Bone, _, $, win) => {
     let Collections = {};
     let Models = {};
 
-    Models.Compras = Bone.Model.extend({
+    Models.Compra = Bone.Model.extend({
         initialize: () => {
-            console.log("inicializa el modelo de compras")
+            console.log("inicializa el modelo de compra")
         },
         urlRoot: 'http://localhost:3001/compras/crear',
         idAttribute: 'id',
@@ -29,9 +29,9 @@ Modulos.Compras = ((Bone, _, $, win) => {
         }
     })
 
-    Collections.Compras = Bone.Collection.extend({
-        'url': 'http://localhost:3001/Compras/listar',
-        'model': Models.Compras
+    Collections.Compra = Bone.Collection.extend({
+        'url': 'http://localhost:3001/compras/listar',
+        'model': Models.Compra
     })
 
     return {

@@ -1,12 +1,11 @@
 
 //modulo de ProcesarPagosEfectivo 
-const ProcesarOnline = ((win, db) => {
+const ProcesarOnline = ((win) => {
     
     let datos;
 
     const procesarDatos = ()=> {
-        console.log('Procesar datos en efectivo', db.nombre)
-        db.nombre = "Alan"
+        console.log('Procesar datos en efectivo')
     }
 
     return {
@@ -16,27 +15,32 @@ const ProcesarOnline = ((win, db) => {
             procesarDatos()
         }
     }
-})(window, instancia);
+})(window);
 
 //modulo de ProcesarPagosCredito
-const ProcesarOffline = ((win, db) => {
+const ProcesarOffline = ((win) => {
 
     let datos;
+    let connection;
 
     const procesarDatos = ()=> {
-        console.log('Procesar datos en credito', db.nombre)
+        console.log('Procesar datos en credito')
     }
+
     return {
         init : () => {
+            connection = new Connection();
+            win.InstanciaDb = connection.db;
+            console.log(instanciaDb)
         },
         procesar: () => {
             procesarDatos()
         }
     }
-})(window, instancia);
+})(window);
 
 //metodo de contexto
-const AmbenteProcesar = {
+const AmbienteProcesar = {
     procesarOnline: () => {
         let procesarPagos = ProcesarOnline;
         procesarPagos.init();

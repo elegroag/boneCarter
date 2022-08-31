@@ -1,4 +1,5 @@
-"use strict";
+
+
 var Modulos = {};
 var Cruds = {};
 var App = {
@@ -7,6 +8,8 @@ var App = {
 	Routers: {},
 	Views: {}
 };
+
+window.InstanciaDb = null;
 
 var Core = (() => { 
 	let networkConnection;
@@ -44,13 +47,16 @@ var Core = (() => {
 
 	let init = (options) => {
 		networkConnection = new NetworkConnection();
+		lanzarEventos()
 	}
+
+	let getNetwork = () => {
+		return networkConnection;
+	}
+
 	return {
-		'lanzarEventos': lanzarEventos,
 		'init': init,
+		'network': getNetwork,
 		'preparaToken': preparaToken
 	}
 })()
-
-window.core = Core()
-window.core.init()
