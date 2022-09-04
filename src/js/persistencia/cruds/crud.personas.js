@@ -1,8 +1,9 @@
 /**
  * Crud de Personas
 */
-Cruds.Personas = ((win, db, Persona) => {
+Cruds.Personas = ((win, Persona) => {
 
+    let db = win.InstanciaDb;
     let table = 'persona'; 
     let collection = void 0;
     let model = void 0;
@@ -178,4 +179,4 @@ Cruds.Personas = ((win, db, Persona) => {
         "mostrar": mostrar,
         "consulta": consulta
     }
-})(window, InstanciaDb, Modulos.Persona);
+})(window, Modulos.Persona);

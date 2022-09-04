@@ -1,16 +1,14 @@
-"use strict";
-
 class NetworkConnection {
 
     static instancia;
-    _net = 'Offline';
+    _net;
     _state;
     _networkState;
 
     constructor(){
         //si no es false !!
         if( !!NetworkConnection.instancia){
-            return Connection.instancia;
+            return NetworkConnection.instancia;
         } 
         this.init()
         NetworkConnection.instancia = this;
@@ -18,17 +16,19 @@ class NetworkConnection {
     }
 
     init(){
-        this._networkState = navigator.connection.type;
+        this._networkState = (navigator.connection.type).toUpperCase();
         let states = new Array;
-		states[Connection.UNKNOWN]  = 'Unknown connection';
-		states[Connection.ETHERNET] = 'Ethernet connection';
-		states[Connection.WIFI]     = 'WiFi connection';
-		states[Connection.CELL_2G]  = 'Cell 2G connection';
-		states[Connection.CELL_3G]  = 'Cell 3G connection';
-		states[Connection.CELL_4G]  = 'Cell 4G connection';
-		states[Connection.CELL]     = 'Cell generic connection';
-		states[Connection.NONE]     = 'No network connection';
+		states['UNKNOWN']  = 'Unknown connection';
+		states['ETHERNET'] = 'Ethernet connection';
+		states['WIFI']     = 'WiFi connection';
+		states['CELL_2G']  = 'Cell 2G connection';
+		states['CELL_3G']  = 'Cell 3G connection';
+		states['CELL_4G']  = 'Cell 4G connection';
+		states['CELL']     = 'Cell generic connection';
+		states['NONE']     = 'No network connection';
+       
 		this._state = states[this._networkState] || false
+        this._net = (this._networkState == 'NONE')? 'Offline': 'Online'; 
     }
 
     change(net, networkState, state){

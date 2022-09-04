@@ -2,30 +2,52 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Hello World!</title>
+		<title>HolaTest2!</title>
 		<meta charset="utf-8">
 		<meta http-equiv=" X-UA-Compatible" content=" IE=edge">
-		<meta http-equiv="Content-Security-Policy" 
-		content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+		<meta http-equiv="Content-Security-Policy" content="default-src *;
+		script-src 'self' 'unsafe-inline' 'unsafe-eval';
+		style-src 'self' 'unsafe-inline';
+		font-src 'self' data: https://ssl.gstatic.com 'unsafe-eval';
+		img-src 'self' data:"/>
+		<meta http-equiv="X-Content-Security-Policy" content="default-src *;
+		script-src 'self' 'unsafe-inline' 'unsafe-eval';
+		style-src 'self' 'unsafe-inline';
+		font-src 'self' data: https://ssl.gstatic.com 'unsafe-eval';
+		img-src 'self' data:"/>
+		
 		<meta name="format-detection" content="telephone=no">
 		<meta name="msapplication-tap-highlight" content="no">
-		<meta name="color-scheme" content="light dark">
-		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-		<meta http-equiv="X-Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" /> 
+		<meta name="color-scheme" content="light dark">	 
 		<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
 		<link rel="stylesheet" href="static/css/build.styles.css" />
+
+		<script type="text/template" id="tmp_footer_page">
+			<h1>Footer de la pagina</h1>			
+		</script>
+
 	</head>
-	<body  data-theme="c">
+	<body data-theme="c">
 		<div class='app' data-role='page' data-theme="c" id="pageTest">
+
+			<div data-role="header" role='banner'>
+				<span class="ui-title">Login</span>
+				<button type="button" id="show-alert" class="ui-btn ui-btn-c ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-left  ui-shadow ui-icon-grid"></button>
+				<button type="button" id="clear" class="ui-btn ui-btn-d ui-icon-delete ui-btn-icon-notext ui-corner-all ui-btn-right  ui-shadow ui-icon-gear"></button>
+			</div>
+
             <div role="main" class="ui-content" id='deviceready'>
 				<h1>💖 Project Test</h1>
 				<p>Welcome to your Electron application.</p>
                 <p>Indica la acción  a realizar para configurar su aplicación.</p>
             </div>
+
+			<div data-role="footer" data-position="fixed">
+            </div>
         </div>
 		
 		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="static/js/build.resources.js" data-main="js/mobile"></script>
+		<script type="text/javascript" src="static/js/build.resources.js"></script>
 		<script type="text/javascript" src="static/js/build.test.js" data-main="js/mobile"></script>
 	</body>
 </html>

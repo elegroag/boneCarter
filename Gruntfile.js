@@ -19,6 +19,7 @@ module.exports = function (grunt) {
 			},
 			test: {
 				src: [
+					"src/js/init.js",
 					"src/js/servicios/network.connection.js",
 					"src/js/persistencia/database/db.connection.js",
 					"src/js/persistencia/helpers.js",
@@ -28,6 +29,7 @@ module.exports = function (grunt) {
 					"src/js/persistencia/cruds/crud.personas.js",
 					"src/js/persistencia/cruds/crud.productos.js",
 					"src/js/servicios/strategy.enviroment.js",
+					"src/js/presentacion/views/view.test.js",
 					"src/js/presentacion/router.test.js",
 					"src/js/presentacion/test.index.js"
 				],

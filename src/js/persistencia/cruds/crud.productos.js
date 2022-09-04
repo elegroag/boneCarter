@@ -1,6 +1,7 @@
 
-Cruds.Productos = ((win, db, Producto) => {
+Cruds.Productos = ((win, Producto) => {
 
+    let db = win.InstanciaDb;
     let table = 'productos'; 
     let collection = [];
     let row = {};
@@ -137,4 +138,4 @@ Cruds.Productos = ((win, db, Producto) => {
         "mostrar": mostrar,
         "consulta": consulta
     }
-})(window, InstanciaDb, Modulos.Producto);
+})(window, Modulos.Producto);

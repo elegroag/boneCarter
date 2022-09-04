@@ -1,17 +1,5 @@
 
-
-var Modulos = {};
-var Cruds = {};
-var App = {
-	Models: {},
-	Collections: {},
-	Routers: {},
-	Views: {}
-};
-
-window.InstanciaDb = null;
-
-var Core = (() => { 
+const Core = ((Backbone, $) => { 
 	let networkConnection;
 
 	const onOffline = () => {
@@ -24,6 +12,7 @@ var Core = (() => {
 		let networkState = navigator.connection.type;
     	if (networkState !== Connection.NONE) {
 			networkConnection.change('Online', networkState, true)
+			console.log("connection OK");
     	}else{
 			networkConnection.change('Offline', networkState, false)
 		}
@@ -45,7 +34,9 @@ var Core = (() => {
 		document.addEventListener("online", onOnline, false);
 	}
 
-	let init = (options) => {
+	let init = (options = {}) => {
+		$.mobile.linkBindingEnabled = false
+		$.mobile.hashListeningEnabled = false
 		networkConnection = new NetworkConnection();
 		lanzarEventos()
 	}
@@ -59,4 +50,4 @@ var Core = (() => {
 		'network': getNetwork,
 		'preparaToken': preparaToken
 	}
-})()
+})(Backbone, jQuery)

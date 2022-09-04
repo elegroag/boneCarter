@@ -23,33 +23,41 @@ const ProcesarOffline = ((win) => {
     let datos;
     let connection;
 
+    const init = () => {
+        connection = new Connection();
+        win.InstanciaDb = connection.db;
+        console.log(win.InstanciaDb)
+    }
+
     const procesarDatos = ()=> {
         console.log('Procesar datos en credito')
     }
 
     return {
-        init : () => {
-            connection = new Connection();
-            win.InstanciaDb = connection.db;
-            console.log(instanciaDb)
-        },
         procesar: () => {
+            init()
             procesarDatos()
         }
     }
 })(window);
 
-//metodo de contexto
-const AmbienteProcesar = {
-    procesarOnline: () => {
-        let procesarPagos = ProcesarOnline;
-        procesarPagos.init();
-        procesarPagos.procesar();
-    },
-    procesarOffline: () => {
-        let procesarPagos = ProcesarOffline;
-        procesarPagos.init();
-        procesarPagos.procesar();
+
+class _Procesador {
+
+    procesarOnline = ProcesarOnline;
+    procesarOffline = ProcesarOffline;
+    procesador = void 0;
+
+    constructor(){
+        let red = window.core.network();
+        if( red.net == 'Online'){
+            this.procesador = this.procesarOnline;
+        } else {
+            this.procesador = this.procesarOffline;
+        }
+    }
+
+    procesar(){
+        this.procesador.procesar();
     }
 }
-//metodo receptor de cliente

@@ -1,6 +1,7 @@
+const Views = App.Views;
 
-
-var TestRouter = Backbone.Router.extend( {
+App.Routers.TestRouter = Backbone.Router.extend( {
+	views: {},
 	initialize: () =>  {
 		Backbone.history.start()
 	},
@@ -10,6 +11,7 @@ var TestRouter = Backbone.Router.extend( {
 	testPage: () => {
 		console.log('testPage')
 		$.mobile.changePage( "#pageTest" , { reverse: false, changeHash: false } );
-		$.mobile.loading( "hide" );
+		_view.test = new Test()
+		$.mobile.loading( "hide")
 	}
 })
