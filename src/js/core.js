@@ -1,6 +1,9 @@
 
-const Core = ((Backbone, $) => { 
-	let networkConnection;
+const Core = ((win, $) => { 
+
+	let networkConnection = new NetworkConnection();
+	let connectionDb = new Connection();
+	let initDb;
 
 	const onOffline = () => {
 		let networkState = navigator.connection.type;
@@ -29,15 +32,22 @@ const Core = ((Backbone, $) => {
 		return _token;
 	}
 
+	let inicializaDatabase = () => {
+		win.InstanciaDb = connectionDb.db
+		initDb = Inicializacion
+		initDb.init()
+	}
+
 	let lanzarEventos =  () => {
 		document.addEventListener("offline", onOffline, false);
 		document.addEventListener("online", onOnline, false);
+		console.log(win.InstanciaDb)
 	}
 
 	let init = (options = {}) => {
 		$.mobile.linkBindingEnabled = false
 		$.mobile.hashListeningEnabled = false
-		networkConnection = new NetworkConnection();
+		inicializaDatabase()
 		lanzarEventos()
 	}
 
@@ -48,6 +58,7 @@ const Core = ((Backbone, $) => {
 	return {
 		'init': init,
 		'network': getNetwork,
-		'preparaToken': preparaToken
+		'preparaToken': preparaToken,
+		'initDb': initDb
 	}
-})(Backbone, jQuery)
+})(window, jQuery)

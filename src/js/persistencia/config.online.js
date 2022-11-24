@@ -1,1 +1,0 @@
-//se define la coneccion online del apliativo

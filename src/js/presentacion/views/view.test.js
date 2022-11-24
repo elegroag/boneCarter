@@ -16,8 +16,11 @@ class Test {
         $.mobile.ignoreContentEnabled = true;
         this.page = $(":mobile-pagecontainer").pagecontainer("getActivePage");
         this.events();
-        let strategy  = new _Procesador();
-        strategy.procesar();
+        let strategy  = new Procesador()
+        strategy.offline()
+        strategy.procesar({}, (respuesta) =>{
+            
+        });
     }
 
     events(){
